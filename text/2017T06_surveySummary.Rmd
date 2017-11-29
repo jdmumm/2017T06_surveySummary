@@ -1,5 +1,5 @@
 ---
-title: "2017 PWS Trawl Survey Summary (DRAFT)"
+title: "2017 PWS Trawl Survey Summary (draft)"
 author: 'Joshua Mumm'      
 date: "November 28th, 2017"
 output:
@@ -107,7 +107,30 @@ column_spec(8, width = "4.3em") %>%
 column_spec(9, width = "4.6em") %>%
 column_spec(10, width = "4.3em")%>% 
 add_footnote(c("Populations estimates were not calulated in 2003 due to insufficient sample size."), notation = "alphabet")
+
+read.csv("../output/931PopFems_Main_vldz.csv") %>% filter (year > 1990) %>% 
+  select(Year = year, Tows = tows, 'Juvenile' = FT11_P_, '± 95% CI' = FT11_P_CI_,
+         'Abund.' = MF_P_, '± 95% CI ' = MF_P_CI_,
+         'Abund. ' =TF_P_, '± 95% CI  ' = TF_P_CI_) %>%
+
+  mutate (Year = as.factor(Year)) %>%
+  mutate_if(is.numeric,funs(prettyNum(., big.mark=","))) %>%
+  mutate (Year = as.numeric(as.character(Year))) %>%
+  add_row(Year = c(2000,2002,2004,2006,2008,2010,2012,2016),  'Abund.' = rep('No_Survey',8)) %>%
+  add_row(Year = 2003, Tows = 1) %>%
+  mutate_all(funs(replace(., is.na(.), '-'))) %>%
+  arrange(Year) -> fem_v
+
+kable(fem_v, format = "latex", booktabs = T, align = 'r',
+      caption="Female Tanner crab abundance estimates for Valdez Arm in Prince William Sound.") %>%
+  kable_styling() %>%
+  add_header_above(c(" " = 2, "Juvenile" = 2, "Mature" = 2, "Total Females" = 2)) %>%
+  add_footnote(c("Populations estimates were not calulated in 2003 due to insufficient sample size."), notation = "alphabet")
 ```
+
+\pagebreak
+\newpage
+
 ![Preferred legal male Tanner crab (>135 mm) abundance estimates and 95% confidence intervals for Valdez Arm in Prince William Sound.](../figs/T06LM_vldz.png)
 
 

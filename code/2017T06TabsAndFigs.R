@@ -55,6 +55,12 @@ dat %>% filter (PROJECT_CODE == 'T06') %>% select(year = YEAR, tows = n,
 
 #write.csv(f,'./output/931PopFems_Main.csv')
 
+## Females Vldz ----
+dat_vldz %>% filter (PROJECT_CODE == 'T06') %>% select(year = YEAR, tows = n,
+                                                  FT11_P_, FT11_P_CI_, MF_P_, MF_P_CI_, TF_P_, TF_P_CI_) -> f_v
+
+write.csv(f_v,'./output/931PopFems_Main_vldz.csv')
+
 ##Plot LM ---- 
 
 #Convert to thousands of crabs
