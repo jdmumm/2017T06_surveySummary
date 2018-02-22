@@ -1,7 +1,7 @@
 ---
-title: "2017 PWS Trawl Survey Summary (draft)"
+title: "2017 PWS Trawl Survey Summary"
 author: 'Joshua Mumm'      
-date: "November 28th, 2017"
+date: "February 22nd, 2018"
 output:
   pdf_document:
     includes:
@@ -20,9 +20,10 @@ knitr::opts_chunk$set(echo = FALSE, message=F, warning=F)
 
 The 2017 Prince William Sound large-mesh bottom trawl survey was conducted between June 9th and 16th.  A total of 48 successful 1 nmi tows were completed, including 5 in Valdez Arm (Figure 1).  A total of 1,350 male and 1,040 female Tanner crab were captured.
 
-Although the legal size was reduced from 135 mm (5.3 in) to 127 mm (5.0 in) in 2017, the historical legal size of 135 mm was redefined as preferred legal and will continue to be used for achieving minimum stock size thresholds and setting total allowable catch (5 AAC 35.308).  Catch can be retained so long as it is larger than the legal size (127 mm).   The threshold for opening the commercial fishery is 200,000 preferred legal males.
+Although the legal size was reduced from 135 mm (5.3 in) to 127 mm (5.0 in) in 2017, the historical legal size of 135 mm was retained for achieving minimum stock size thresholds and setting total allowable catch (5 AAC 35.308).  Catch can be retained so long as it is larger than the legal size (127 mm).  The abundance threshold for opening the commercial fishery is 200,000 males larger than the historical legal size.
 
-The 2017 catch included 189 preferred legal males.  Mean preferred legal male CPUE was 3.94 crab/nmi (SE = 0.92; CV = 152%) and ranged from 0 to 20.  The estimated abundance of preferred legal males was 149,481 crabs (95% CI = +/- 70,117), slightly greater than the previous 2 surveys in 2014 and 2015, but less than the 2 high years in 2011 and 2013 (Table 1, Figure 2).  The estimated abundance of prerecruit-1 males (113-134 mm) was the second greatest in the history of the survey.  This dominant cohort first appeared in the survey as a record abundance of pre-4’s in 2013, and is anticipated to contribute to an increased abundance of preferred legal males in 2018.      
+The 2017 catch included 189 historical legal males.  Mean historical legal male CPUE was 3.94 crab/nmi (SE = 0.92; CV = 152%) and ranged from 0 to 20.  The estimated abundance of historical legal males was 149,481 crabs (95% CI = +/- 70,117), slightly greater than the previous 2 surveys in 2014 and 2015, but less than the 2 high years in 2011 and 2013 (Table 1, Figure 2).  The estimated abundance of prerecruit-1 males (113-134 mm) was the second greatest in the history of the survey.  This dominant cohort first appeared in the survey as a record abundance of pre-4’s in 2013, and is anticipated to contribute to an increased abundance of historical legal males in 2018.
+      
 \listoftables
 \listoffigures
 
@@ -48,7 +49,7 @@ read.csv("../output/931PopMales_Main.csv") %>% filter (YEAR > 1990) %>%
 kable(LM17, format = "latex", booktabs = T, align = 'r',
       caption="Male Tanner crab abundance estimates from trawl surveys in Prince William Sound, 1991-2017. Parenthetical size limits are carapace width in millimeters.") %>%
 kable_styling() %>%
-add_header_above(c(" " = 2, "Pre-Recruits" = 4, "Preferred Legal Males" = 2, "Total Males" = 2))%>%
+add_header_above(c(" " = 2, "Pre-Recruits" = 4, "Historical Legal Males" = 2, "Total Males" = 2))%>%
 column_spec(1:2, width = "1.3em") %>%
 column_spec(3:5, width = "3.9em")%>%
 column_spec(6, width = "4.1em")%>%
@@ -80,7 +81,7 @@ kable(fem, format = "latex", booktabs = T, align = 'r',
 \hfill\break
 \hfill\break
 
-![Preferred legal male Tanner crab (>135 mm) abundance estimates with 95% confidence intervals and commercial threshold in Prince William Sound.](../figs/T06LM.png)
+![Historical legal male Tanner crab (>135 mm) abundance estimates with 95% confidence intervals and commercial threshold in Prince William Sound.](../figs/T06LM.png)
 
 ```{r}
 read.csv("../output/931PopMales_Main_vldz.csv") %>% 
@@ -98,7 +99,7 @@ read.csv("../output/931PopMales_Main_vldz.csv") %>%
 kable(LM17, format = "latex", booktabs = T, align = 'r',
       caption="Male Tanner crab abundance estimates for Valdez Arm in Prince William Sound.") %>%
 kable_styling() %>%
-add_header_above(c(" " = 2, "Pre-Recruits" = 4, "Preferred Legal Males" = 2, "Total Males" = 2))%>%
+add_header_above(c(" " = 2, "Pre-Recruits" = 4, "Historical Legal Males" = 2, "Total Males" = 2))%>%
 column_spec(1:2, width = "1.3em") %>%
 column_spec(3:5, width = "3.9em")%>%
 column_spec(6, width = "4.1em")%>%
@@ -131,7 +132,7 @@ kable(fem_v, format = "latex", booktabs = T, align = 'r',
 \pagebreak
 \newpage
 
-![Preferred legal male Tanner crab (>135 mm) abundance estimates and 95% confidence intervals for Valdez Arm in Prince William Sound.](../figs/T06LM_vldz.png)
+![Historical legal male Tanner crab (>135 mm) abundance estimates and 95% confidence intervals for Valdez Arm in Prince William Sound.](../figs/T06LM_vldz.png)
 
 
 
